@@ -2,17 +2,15 @@
 Broker consumer for backing up logs as files
 
 # How to set up
-- Edit configuration file under `src/main/resources/application.conf`
-- Setup AWS keys. Set both keyId and secretKey either as a environment variable
-using the `start-services.sh` file. Or include them on the config file specified
-above.
+- Install Spark `brew install apache-spark`
+- Install Maven `brew install maven`
+- Install Java8
+
+- Create file `/Users/toledo/file.log` with the data to analyze.
 
 # Run manually
-- Install `maven`
+- git clone `git@github.com:dtoledo23/influencers-crawler.git`
+- `cd influencers-crawler`
 - `mvn package`
-- `java -jar target/LogsBackup-jar-with-dependencies.jar`
-
-# Run with docker
-- `docker build -t analytics-backup .`
-- `docker run -it analytics-backup`
-# influencers-crawler
+- `spark-submit target/influencer-crawler-0.0.1-jar-with-dependencies.jar`
+- See the results in the console.
